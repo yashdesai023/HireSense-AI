@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HireSense AI - Folder Structure</title>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            padding: 30px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 30px;
+            font-size: 2.5em;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .mermaid {
+            text-align: center;
+            margin: 20px 0;
+            overflow-x: auto;
+        }
+        .description {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 30px;
+            border-left: 5px solid #667eea;
+        }
+        .description h3 {
+            color: #333;
+            margin-top: 0;
+        }
+        .description ul {
+            color: #666;
+            line-height: 1.6;
+        }
+        .legend {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 500;
+        }
+        .legend-frontend { background: #e3f2fd; color: #1976d2; }
+        .legend-backend { background: #f3e5f5; color: #7b1fa2; }
+        .legend-ml { background: #e8f5e8; color: #388e3c; }
+        .legend-devops { background: #fff3e0; color: #f57c00; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📁 HireSense AI Folder Structure</h1>
+        
+        <div class="legend">
+            <div class="legend-item legend-frontend">🎨 Frontend (React)</div>
+            <div class="legend-item legend-backend">⚙️ Backend (Spring Boot)</div>
+            <div class="legend-item legend-ml">🤖 ML Service (Python)</div>
+            <div class="legend-item legend-devops">🚀 DevOps & Infrastructure</div>
+        </div>
+
+        <div class="mermaid">
+            graph TD
+                Root["📁 HireSense AI/"]
+                
+                %% Frontend Section
+                Frontend["🎨 frontend/"]
+                FrontendPublic["📄 public/"]
+                FrontendSrc["📁 src/"]
+                FrontendAssets["📁 assets/"]
+                FrontendComponents["📁 components/"]
+                FrontendPages["📁 pages/"]
+                FrontendUtils["📁 utils/"]
+                FrontendApp["📄 App.js"]
+                FrontendIndex["📄 index.js"]
+                FrontendEnv["📄 .env"]
+                FrontendPackage["📄 package.json"]
+                FrontendLock["📄 package-lock.json"]
+                
+                %% Backend Section
+                Backend["⚙️ backend/"]
+                BackendSrc["📁 src/"]
+                BackendMain["📁 main/"]
+                BackendJava["📁 java/"]
+                BackendCom["📁 com/"]
+                BackendHiresense["📁 hiresenseai/"]
+                BackendBackend["📁 backend/"]
+                BackendConfig["📁 config/"]
+                BackendController["📁 controller/"]
+                BackendModel["📁 model/"]
+                BackendRepo["📁 repository/"]
+                BackendService["📁 service/"]
+                BackendApp["📄 HireSenseAiApplication.java"]
+                BackendResources["📁 resources/"]
+                BackendProps["📄 application.properties"]
+                BackendStatic["📁 static/"]
+                BackendTemplates["📁 templates/"]
+                BackendTest["📁 test/"]
+                BackendPom["📄 pom.xml"]
+                BackendMvn["📁 .mvn/"]
+                
+                %% ML Service Section
+                MLService["🤖 ml-service/"]
+                MLSrc["📁 src/"]
+                MLAPI["📁 api/"]
+                MLData["📁 data/"]
+                MLModels["📁 models/"]
+                MLScripts["📁 scripts/"]
+                MLMain["📄 main.py"]
+                MLVenv["📁 venv/"]
+                MLRequirements["📄 requirements.txt"]
+                MLDockerfile["📄 Dockerfile"]
+                
+                %% DevOps Section
+                DevOps["🚀 devops/"]
+                DevCICD["📁 ci-cd/"]
+                DevK8s["📁 kubernetes/"]
+                DevScripts["📁 scripts/"]
+                DevTerraform["📁 terraform/"]
+                
+                %% Connections
+                Root --> Frontend
+                Root --> Backend
+                Root --> MLService
+                Root --> DevOps
+                
+                %% Frontend Connections
+                Frontend --> FrontendPublic
+                Frontend --> FrontendSrc
+                Frontend --> FrontendEnv
+                Frontend --> FrontendPackage
+                Frontend --> FrontendLock
+                
+                FrontendSrc --> FrontendAssets
+                FrontendSrc --> FrontendComponents
+                FrontendSrc --> FrontendPages
+                FrontendSrc --> FrontendUtils
+                FrontendSrc --> FrontendApp
+                FrontendSrc --> FrontendIndex
+                
+                %% Backend Connections
+                Backend --> BackendSrc
+                Backend --> BackendPom
+                Backend --> BackendMvn
+                
+                BackendSrc --> BackendMain
+                BackendSrc --> BackendTest
+                
+                BackendMain --> BackendJava
+                BackendMain --> BackendResources
+                
+                BackendJava --> BackendCom
+                BackendCom --> BackendHiresense
+                BackendHiresense --> BackendBackend
+                
+                BackendBackend --> BackendConfig
+                BackendBackend --> BackendController
+                BackendBackend --> BackendModel
+                BackendBackend --> BackendRepo
+                BackendBackend --> BackendService
+                BackendBackend --> BackendApp
+                
+                BackendResources --> BackendProps
+                BackendResources --> BackendStatic
+                BackendResources --> BackendTemplates
+                
+                %% ML Service Connections
+                MLService --> MLSrc
+                MLService --> MLVenv
+                MLService --> MLRequirements
+                MLService --> MLDockerfile
+                
+                MLSrc --> MLAPI
+                MLSrc --> MLData
+                MLSrc --> MLModels
+                MLSrc --> MLScripts
+                MLSrc --> MLMain
+                
+                %% DevOps Connections
+                DevOps --> DevCICD
+                DevOps --> DevK8s
+                DevOps --> DevScripts
+                DevOps --> DevTerraform
+                
+                %% Styling
+                classDef frontendStyle fill:#e3f2fd,stroke:#1976d2,stroke-width:2px
+                classDef backendStyle fill:#f3e5f5,stroke:#7b1fa2,stroke-width:2px
+                classDef mlStyle fill:#e8f5e8,stroke:#388e3c,stroke-width:2px
+                classDef devopsStyle fill:#fff3e0,stroke:#f57c00,stroke-width:2px
+                classDef rootStyle fill:#fce4ec,stroke:#c2185b,stroke-width:3px
+                
+                class Root rootStyle
+                class Frontend,FrontendPublic,FrontendSrc,FrontendAssets,FrontendComponents,FrontendPages,FrontendUtils,FrontendApp,FrontendIndex,FrontendEnv,FrontendPackage,FrontendLock frontendStyle
+                class Backend,BackendSrc,BackendMain,BackendJava,BackendCom,BackendHiresense,BackendBackend,BackendConfig,BackendController,BackendModel,BackendRepo,BackendService,BackendApp,BackendResources,BackendProps,BackendStatic,BackendTemplates,BackendTest,BackendPom,BackendMvn backendStyle
+                class MLService,MLSrc,MLAPI,MLData,MLModels,MLScripts,MLMain,MLVenv,MLRequirements,MLDockerfile mlStyle
+                class DevOps,DevCICD,DevK8s,DevScripts,DevTerraform devopsStyle
+        </div>
+
+        <div class="description">
+            <h3>🏗️ Project Structure Overview</h3>
+            <ul>
+                <li><strong>🎨 Frontend:</strong> React application with components, pages, and utilities organized for scalability</li>
+                <li><strong>⚙️ Backend:</strong> Spring Boot application following MVC pattern with proper package structure</li>
+                <li><strong>🤖 ML Service:</strong> Python FastAPI service for AI/ML functionalities with modular organization</li>
+                <li><strong>🚀 DevOps:</strong> Infrastructure as code, CI/CD pipelines, and deployment configurations</li>
+            </ul>
+            
+            <h3>📋 Key Features:</h3>
+            <ul>
+                <li><strong>Monorepo Structure:</strong> All services in one repository for unified version control</li>
+                <li><strong>Modular Design:</strong> Clear separation of concerns across different technologies</li>
+                <li><strong>Scalable Architecture:</strong> Each service can be developed and deployed independently</li>
+                <li><strong>DevOps Ready:</strong> Complete CI/CD and infrastructure automation setup</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        mermaid.initialize({
+            startOnLoad: true,
+            theme: 'default',
+            flowchart: {
+                useMaxWidth: true,
+                htmlLabels: true,
+                curve: 'basis'
+            },
+            securityLevel: 'loose'
+        });
+    </script>
+</body>
+</html> 

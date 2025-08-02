@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HireSense AI - Module Flow Architecture</title>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 1600px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            padding: 30px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 30px;
+            font-size: 2.5em;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .mermaid {
+            text-align: center;
+            margin: 20px 0;
+            overflow-x: auto;
+        }
+        .description {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 30px;
+            border-left: 5px solid #667eea;
+        }
+        .description h3 {
+            color: #333;
+            margin-top: 0;
+        }
+        .description ul {
+            color: #666;
+            line-height: 1.6;
+        }
+        .legend {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 500;
+        }
+        .legend-ui { background: #fce4ec; color: #c2185b; }
+        .legend-backend { background: #e3f2fd; color: #1565c0; }
+        .legend-ml { background: #e8f5e8; color: #2e7d32; }
+        .legend-db { background: #fff3e0; color: #ef6c00; }
+        .legend-modules { background: #f3e5f5; color: #7b1fa2; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🔄 HireSense AI Module Flow Architecture</h1>
+        
+        <div class="legend">
+            <div class="legend-item legend-ui">🎨 User Interface (React)</div>
+            <div class="legend-item legend-backend">⚙️ Backend Services (Spring Boot)</div>
+            <div class="legend-item legend-ml">🤖 Machine Learning Services (Python)</div>
+            <div class="legend-item legend-db">💾 Database (MySQL)</div>
+            <div class="legend-item legend-modules">🔧 Core Modules</div>
+        </div>
+
+        <div class="mermaid">
+            flowchart TD
+                subgraph "🎨 User Interface"
+                    UI["React Frontend"]
+                end
+
+                subgraph "⚙️ Backend Services"
+                    BE["Spring Boot Backend"]
+                    DB["MySQL Database"]
+                end
+
+                subgraph "🤖 Machine Learning Services"
+                    ML["Python ML Service (FastAPI)"]
+                end
+
+                subgraph "🔧 Core Modules"
+                    M1["🔐 Auth Module"]
+                    M2["📝 Job Posting Module"]
+                    M3["🧠 Assessment Engine"]
+                    M4["📊 Resume Scoring Engine"]
+                    M5["📅 Interview Scheduling"]
+                    M6["📈 Analytics Dashboard"]
+                end
+
+                %% User Interface to Backend
+                UI -->|"User Requests"| BE
+
+                %% Backend to Core Modules
+                BE -->|"Handles"| M1
+                BE -->|"Manages"| M2
+                BE -->|"Orchestrates"| M3
+                BE -->|"Triggers"| M4
+                BE -->|"Coordinates"| M5
+                BE -->|"Populates"| M6
+
+                %% Core Modules to Database
+                M1 -->|"Stores User Data"| DB
+                M2 -->|"Stores Job Data"| DB
+                M3 -->|"Stores Test Data & Results"| DB
+                M4 -->|"Stores Resume Data & Scores"| DB
+                M5 -->|"Stores Scheduling Data"| DB
+                M6 -->|"Retrieves Data"| DB
+
+                %% Backend to ML Service
+                BE -->|"Sends Data for Processing"| ML
+                M3 --> ML
+                M4 --> ML
+
+                %% ML Service to Core Modules
+                ML -->|"Provides Test Generation/Evaluation"| M3
+                ML -->|"Provides Resume Scores"| M4
+
+                %% Styling
+                classDef uiStyle fill:#fce4ec,stroke:#c2185b,stroke-width:3px
+                classDef backendStyle fill:#e3f2fd,stroke:#1565c0,stroke-width:3px
+                classDef mlStyle fill:#e8f5e8,stroke:#2e7d32,stroke-width:3px
+                classDef dbStyle fill:#fff3e0,stroke:#ef6c00,stroke-width:3px
+                classDef moduleStyle fill:#f3e5f5,stroke:#7b1fa2,stroke-width:2px
+
+                class UI uiStyle
+                class BE,DB backendStyle
+                class ML mlStyle
+                class M1,M2,M3,M4,M5,M6 moduleStyle
+        </div>
+
+        <div class="description">
+            <h3>🔄 Data Flow Architecture</h3>
+            <ul>
+                <li><strong>🎨 React Frontend:</strong> Handles user interactions and displays data</li>
+                <li><strong>⚙️ Spring Boot Backend:</strong> Orchestrates all business logic and API endpoints</li>
+                <li><strong>🤖 Python ML Service:</strong> Processes AI/ML tasks for assessments and resume scoring</li>
+                <li><strong>💾 MySQL Database:</strong> Stores all application data and user information</li>
+            </ul>
+            
+            <h3>🔧 Core Module Functions:</h3>
+            <ul>
+                <li><strong>🔐 Auth Module:</strong> User authentication, authorization, and session management</li>
+                <li><strong>📝 Job Posting Module:</strong> Create, manage, and display job listings</li>
+                <li><strong>🧠 Assessment Engine:</strong> Generate and evaluate skill tests and interviews</li>
+                <li><strong>📊 Resume Scoring Engine:</strong> Analyze resumes and provide skill assessments</li>
+                <li><strong>📅 Interview Scheduling:</strong> Coordinate interview sessions and availability</li>
+                <li><strong>📈 Analytics Dashboard:</strong> Provide insights and reporting for all activities</li>
+            </ul>
+            
+            <h3>🔄 Key Interactions:</h3>
+            <ul>
+                <li><strong>User Requests → Backend:</strong> All user actions flow through Spring Boot</li>
+                <li><strong>Backend → Modules:</strong> Business logic distributed across specialized modules</li>
+                <li><strong>Modules → Database:</strong> Persistent storage for all application data</li>
+                <li><strong>Backend/Modules → ML Service:</strong> AI processing for assessments and scoring</li>
+                <li><strong>ML Service → Modules:</strong> AI results integrated back into core functionality</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        mermaid.initialize({
+            startOnLoad: true,
+            theme: 'default',
+            flowchart: {
+                useMaxWidth: true,
+                htmlLabels: true,
+                curve: 'basis'
+            },
+            securityLevel: 'loose'
+        });
+    </script>
+</body>
+</html> 

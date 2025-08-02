@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HireSense AI - System Architecture</title>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            padding: 30px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 30px;
+            font-size: 2.5em;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .mermaid {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .description {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 30px;
+            border-left: 5px solid #667eea;
+        }
+        .description h3 {
+            color: #333;
+            margin-top: 0;
+        }
+        .description ul {
+            color: #666;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🏗️ HireSense AI System Architecture</h1>
+        
+        <div class="mermaid">
+            flowchart TD
+                subgraph "User Interaction"
+                    User["User"]
+                end
+
+                subgraph "Frontend"
+                    A["React Frontend"]
+                end
+
+                subgraph "Backend"
+                    B["Spring Boot Backend"]
+                end
+
+                subgraph "Machine Learning"
+                    C["Python ML Service (FastAPI)"]
+                end
+
+                subgraph "Data Storage"
+                    D["MySQL Database"]
+                end
+
+                subgraph "DevOps & Deployment"
+                    E["GitHub Actions"]
+                    F["Docker"]
+                end
+
+                User --> A
+                A --> B
+                B --> D
+                B --> C
+                C --> D
+
+                E --> F
+                F --> B
+                F --> C
+
+                A -.->|"API Requests"| B
+                B -.->|"Data Access"| D
+                B -.->|"ML API Calls"| C
+                C -.->|"Optional: Model Data/Logging"| D
+                E -.->|"Build & Deploy"| F
+                F -.->|"Containerized Services"| B
+                F -.->|"Containerized Services"| C
+        </div>
+
+        <div class="description">
+            <h3>🔄 System Flow Description</h3>
+            <ul>
+                <li><strong>User Interaction:</strong> Candidates, Recruiters, and Administrators access the platform</li>
+                <li><strong>React Frontend:</strong> Provides responsive UI with Tailwind CSS styling</li>
+                <li><strong>Spring Boot Backend:</strong> Handles business logic, authentication, and API endpoints</li>
+                <li><strong>Python ML Service:</strong> Processes resumes, conducts AI interviews, and provides recommendations</li>
+                <li><strong>MySQL Database:</strong> Stores user data, job postings, assessment results, and system configurations</li>
+                <li><strong>DevOps Pipeline:</strong> GitHub Actions automates building and Docker handles containerization</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        mermaid.initialize({
+            startOnLoad: true,
+            theme: 'default',
+            flowchart: {
+                useMaxWidth: true,
+                htmlLabels: true,
+                curve: 'basis'
+            },
+            securityLevel: 'loose'
+        });
+    </script>
+</body>
+</html> 
