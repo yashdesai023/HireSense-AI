@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-HireSenseAiApplication<hiresense-ai>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.hiresense.HireSenseAiApplication",
+            "projectName": "hiresense-ai",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}
