@@ -139,8 +139,32 @@ cd ../backend
 # ML Service setup
 cd ../ml-service
 pip install -r requirements.txt
-python main.py
+uvicorn main:app --reload
 ```
+
+## 📊 Project Status
+
+### ✅ Completed Tasks
+
+- **Module 4: ML Microservice (Python – FastAPI)**
+    - **1. Set Up Python FastAPI Microservice:** The `ml-service` directory contains a complete FastAPI application with the required folder structure.
+    - **2. Resume Parsing Endpoint:** The `routers/resume_parser.py` file implements the `/parse-resume` endpoint.
+    - **4. Resume Scoring Endpoint:** The `routers/scorer.py` file implements the `/score-resume` endpoint.
+    - **5. Enable File Uploads + CORS:** The `main.py` file enables CORS, and the `routers/resume_parser.py` file uses `UploadFile` to handle file uploads.
+    - **6. Swagger Documentation:** FastAPI automatically generates Swagger documentation, which can be accessed at `/docs`.
+
+### ✅ Completed Tasks
+
+- **Module 4: ML Microservice (Python – FastAPI)**
+    - **1. Set Up Python FastAPI Microservice:** The `ml-service` directory contains a complete FastAPI application with the required folder structure.
+    - **2. Resume Parsing Endpoint:** The `routers/resume_parser.py` file implements the `/parse-resume` endpoint.
+    - **3. Resume Scoring Logic:** The `services/scorer_service.py` file now includes a robust scoring mechanism with a dummy model and graceful fallback.
+    - **4. Resume Scoring Endpoint:** The `routers/scorer.py` file implements the `/score-resume` endpoint.
+    - **5. Enable File Uploads + CORS:** The `main.py` file enables CORS, and the `routers/resume_parser.py` file uses `UploadFile` to handle file uploads.
+    - **6. Swagger Documentation:** FastAPI automatically generates Swagger documentation, which can be accessed at `/docs`.
+    - **7. Test the API (Manual + Sample Scripts):** The `test_api.py` script provides sample calls for parsing and scoring endpoints.
+    - **8. Connect with Spring Boot Backend:** The Spring Boot backend (`ApplicationService.java`) now integrates with the FastAPI endpoints for resume parsing and scoring.
+
 
 ## 🤝 Contributing
 

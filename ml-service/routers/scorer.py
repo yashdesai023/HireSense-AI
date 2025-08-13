@@ -1,7 +1,7 @@
 from fastapi import APIRouter, HTTPException
 from pydantic import BaseModel
 from typing import Optional
-from ..services.scorer_service import score_resume
+from services.scorer_service import score_resume
 
 router = APIRouter()
 

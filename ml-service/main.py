@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from .routers import resume_parser, scorer
+from routers import resume_parser, scorer
 
 app = FastAPI()
 

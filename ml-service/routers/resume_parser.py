@@ -1,6 +1,6 @@
 from fastapi import APIRouter, UploadFile, File, HTTPException
 from typing import List
-from ..services.parser_service import parse_resume
+from services.parser_service import parse_resume
 
 router = APIRouter()
 

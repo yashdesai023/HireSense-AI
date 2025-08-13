@@ -2,6 +2,8 @@ package com.hiresense.service;
 
 import com.hiresense.dto.ApplicationDto;
 import com.hiresense.dto.ApplyToJobDto;
+import com.hiresense.dto.ParsedResumeDto;
+import com.hiresense.dto.ResumeScoreDto;
 import com.hiresense.enums.ApplicationStatus;
 import com.hiresense.model.Application;
 import com.hiresense.model.Job;
@@ -20,16 +22,27 @@ public class ApplicationService {
     private final ApplicationRepository applicationRepository;
     private final JobRepository jobRepository;
     private final ResumeRepository resumeRepository;
+    private final MlService mlService;
 
     public ApplicationDto applyToJob(User user, ApplyToJobDto applyToJobDto) {
         Job job = jobRepository.findById(applyToJobDto.getJobId()).orElseThrow(() -> new RuntimeException("Job not found"));
         Resume resume = resumeRepository.findById(applyToJobDto.getResumeId()).orElseThrow(() -> new RuntimeException("Resume not found"));
+
+        // Call ML Service for resume parsing
+        ParsedResumeDto parsedResume = mlService.parseResume(resume.getData(), resume.getFileName(), resume.getFileType());
+        System.out.println("Parsed Resume: " + parsedResume);
+
+        // Call ML Service for resume scoring
+        ResumeScoreDto resumeScore = mlService.scoreResume(parsedResume, job.getDescription());
+        System.out.println("Resume Score: " + resumeScore);
 
         Application application = new Application();
         application.setJob(job);
         application.setCandidate(user);
         application.setResume(resume);
         application.setStatus(ApplicationStatus.SUBMITTED);
+
+        // TODO: Store parsedResume and resumeScore in the Application entity or a new entity
 
         applicationRepository.save(application);
 
