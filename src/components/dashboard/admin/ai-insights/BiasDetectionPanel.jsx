@@ -29,8 +29,8 @@ const BiasDetectionPanel = () => {
           Female applicants drop-off rate is 15% higher than male applicants at the coding test stage.
         </p>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 h-[250px]">
-        <div>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div className="h-[250px]">
             <h4 className="text-center text-sm font-medium mb-2">Gender Distribution</h4>
             <ResponsiveContainer width="100%" height="100%">
                 <PieChart>
@@ -42,7 +42,7 @@ const BiasDetectionPanel = () => {
                 </PieChart>
             </ResponsiveContainer>
         </div>
-        <div>
+        <div className="h-[250px]">
             <h4 className="text-center text-sm font-medium mb-2">Ethnicity Distribution</h4>
              <ResponsiveContainer width="100%" height="100%">
                 <PieChart>
