@@ -7,6 +7,7 @@ import StatsCard from './overview/StatsCard';
 import ChartSection from './overview/ChartSection';
 import RecentActivityTable from './overview/RecentActivityTable';
 import AIInsightsPanel from './overview/AIInsightsPanel';
+import ConfidenceGauge from './ai-insights/ConfidenceGauge';
 
 const Overview = () => {
   // Purpose: This component serves as the default landing page for the admin dashboard,
@@ -38,9 +39,14 @@ const Overview = () => {
       </div>
 
       {/* Charts & Visuals Placeholder */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
-        <ChartSection />
-        <AIInsightsPanel />
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
+        <div className="lg:col-span-2">
+          <ChartSection />
+        </div>
+        <div className="flex flex-col gap-6">
+            <AIInsightsPanel />
+            <ConfidenceGauge />
+        </div>
       </div>
 
       {/* Recent Activity & AI Insights Placeholder */}

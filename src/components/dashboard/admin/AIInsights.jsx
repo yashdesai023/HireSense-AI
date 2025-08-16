@@ -5,7 +5,6 @@ import TrendChart from './ai-insights/TrendChart';
 import PipelineChart from './ai-insights/PipelineChart';
 import BiasDetectionPanel from './ai-insights/BiasDetectionPanel';
 import RecommendationsPanel from './ai-insights/RecommendationsPanel';
-import ConfidenceGauge from './ai-insights/ConfidenceGauge';
 
 const AIInsights = () => {
   const insights = [
@@ -56,14 +55,9 @@ const AIInsights = () => {
       </section>
 
       {/* Trend Analytics & Charts */}
-      <section className="grid grid-cols-1 lg:grid-cols-5 gap-6 mb-8">
-        <div className="lg:col-span-3">
-          <TrendChart />
-        </div>
-        <div className="lg:col-span-2 flex flex-col gap-6">
-            <PipelineChart />
-            <ConfidenceGauge />
-        </div>
+      <section className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
+        <TrendChart />
+        <PipelineChart />
       </section>
 
       {/* Bias Detection & Recommendations */}
