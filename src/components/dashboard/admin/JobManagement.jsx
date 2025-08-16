@@ -13,7 +13,7 @@ const JobManagement = () => {
   ];
 
   return (
-    <div className="p-6">
+    <div className="p-6 text-white"> {/* Ensure overall text is white */}
       {/* Page Header */}
       <div className="flex justify-between items-center mb-6">
         <div>
@@ -28,13 +28,13 @@ const JobManagement = () => {
       {/* Filters */}
       <div className="flex space-x-4 mb-6">
         {/* Status Filter */}
-        <select className="border rounded-md px-3 py-2 text-gray-700">
+        <select className="border rounded-md px-3 py-2 text-gray-700 bg-white bg-opacity-10 border border-opacity-20 border-white text-white"> {/* Apply card styling */}
           <option value="All">All Status</option>
           <option value="Open">Open</option>
           <option value="Closed">Closed</option>
           <option value="Draft">Draft</option>
         </select>
-
+ 
         {/* Search */}
         <div className="relative">
           <input
@@ -42,13 +42,13 @@ const JobManagement = () => {
             placeholder="Search job title or company"
             className="border rounded-md px-3 py-2 pl-10 text-gray-700"
           />
-          <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" size={18} />
+          <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-white" size={18} /> {/* Ensure icon is white */}
         </div>
 
       </div>
 
       {/* Job List Table */}
-      <div className="bg-white rounded-lg shadow-md overflow-hidden mb-6">
+      <div className="w-full p-8 rounded-lg shadow-xl backdrop-filter backdrop-blur-lg bg-white bg-opacity-10 border border-opacity-20 border-white text-white overflow-hidden mb-6"> {/* Apply card styling */}
         <table className="min-w-full divide-y divide-gray-200">
           <thead className="bg-gray-50">
             <tr>
@@ -71,7 +71,7 @@ const JobManagement = () => {
                 Actions
               </th>
             </tr>
-          </thead>
+          </thead> {/* You might want to style thead for dark theme as well */}
           <tbody className="bg-white divide-y divide-gray-200">
             {jobs.map((job, index) => (
               <tr key={index} className="hover:bg-gray-50">
@@ -83,7 +83,7 @@ const JobManagement = () => {
                 </td>
                 <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
                   <span className={`px-2 inline-flex text-xs leading-5 font-semibold rounded-full ${
-                      job.status === 'Open' ? 'bg-green-100 text-green-800' :
+                      job.status === 'Open' ? 'bg-green-500 text-white' : // Adjust status colors for dark theme
                       job.status === 'Closed' ? 'bg-red-100 text-red-800' :
                       'bg-gray-100 text-gray-800'
                     }`}>

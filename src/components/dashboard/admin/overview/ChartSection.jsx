@@ -32,8 +32,8 @@ const aiMatchSuccessData = [
 const ChartSection = () => {
   return (
     <div>
-      <h2 className="text-xl font-bold text-gray-800 mb-4">Platform Analytics</h2>
-      
+      <h2 className="text-xl font-bold text-white mb-4">Platform Analytics</h2>
+
       <div className="bg-white p-6 rounded-lg shadow-xl mb-6" style={{ height: '300px' }}>
         <h3 className="text-lg font-semibold text-gray-800 mb-2">User Growth Over Time</h3>
         <ResponsiveContainer width="100%" height="100%">
@@ -48,7 +48,7 @@ const ChartSection = () => {
         </ResponsiveContainer>
       </div>
 
-       <div className="bg-white p-6 rounded-lg shadow-xl mb-6" style={{ height: '300px' }}>
+      <div className="bg-white p-6 rounded-lg shadow-xl mb-6 backdrop-filter backdrop-blur-lg bg-opacity-10 border border-opacity-20 border-white text-white" style={{ height: '300px' }}>
         <h3 className="text-lg font-semibold text-gray-800 mb-2">Jobs Posted vs. Filled</h3>
         <ResponsiveContainer width="100%" height="100%">
             <BarChart data={jobsData}>
@@ -63,7 +63,7 @@ const ChartSection = () => {
         </ResponsiveContainer>
       </div>
 
-       <div className="bg-white p-6 rounded-lg shadow-xl" style={{ height: '300px' }}>
+      <div className="bg-white p-6 rounded-lg shadow-xl backdrop-filter backdrop-blur-lg bg-opacity-10 border border-opacity-20 border-white text-white" style={{ height: '300px' }}>
         <h3 className="text-lg font-semibold text-gray-800 mb-2">AI Match Success Rate</h3>
         <ResponsiveContainer width="100%" height="100%">
             <PieChart>

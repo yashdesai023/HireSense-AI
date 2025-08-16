@@ -31,7 +31,7 @@ const UserManagement = () => {
   ];
 
   return (
-    <div className="p-6 bg-[#f9fafb] text-gray-800 min-h-screen">
+    <div className="p-6 bg-black text-white min-h-screen">
       {/* Page Header */}
       <div className="mb-6 flex justify-between items-center">
         <div>
@@ -44,7 +44,7 @@ const UserManagement = () => {
       </div>
 
       {/* Filter Bar */}
-      <div className="bg-white p-4 rounded-lg shadow-md mb-6 flex flex-wrap items-center gap-4">
+      <div className="w-full p-8 rounded-lg shadow-xl backdrop-filter backdrop-blur-lg bg-white bg-opacity-10 border border-opacity-20 border-white text-white mb-6 flex flex-wrap items-center gap-4">
         <select className="border rounded-md p-2">
           <option value="All">Filter by Role (All)</option>
           <option value="Admin">Admin</option>
@@ -62,7 +62,7 @@ const UserManagement = () => {
       </div>
 
       {/* Bulk Actions Panel */}
-      <div className="bg-white p-4 rounded-lg shadow-md mb-6 flex items-center gap-4">
+      <div className="w-full p-8 rounded-lg shadow-xl backdrop-filter backdrop-blur-lg bg-white bg-opacity-10 border border-opacity-20 border-white text-white mb-6 flex items-center gap-4">
         <input type="checkbox" className="form-checkbox" />
         <span>Select All</span>
         <button className="bg-green-500 text-white px-3 py-1 rounded-md text-sm hover:bg-green-600">
@@ -77,8 +77,8 @@ const UserManagement = () => {
       </div>
 
       {/* User Table */}
-      <div className="bg-white p-4 rounded-lg shadow-md overflow-x-auto">
-        <table className="min-w-full divide-y divide-gray-200">
+      <div className="w-full p-8 rounded-lg shadow-xl backdrop-filter backdrop-blur-lg bg-white bg-opacity-10 border border-opacity-20 border-white text-white overflow-x-auto">
+        <table className="min-w-full divide-y divide-gray-700">
           <thead className="bg-gray-50">
             <tr>
               <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"></th> {/* Checkbox column */}
@@ -90,7 +90,7 @@ const UserManagement = () => {
               <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Actions</th>
             </tr>
           </thead>
-          <tbody className="bg-white divide-y divide-gray-200">
+          <tbody className="divide-y divide-gray-700">
             {dummyUsers.map((user) => (
               <tr key={user.id} className="hover:bg-gray-100">
                 <td className="px-6 py-4 whitespace-nowrap"><input type="checkbox" className="form-checkbox" /></td>

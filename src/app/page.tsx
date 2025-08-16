@@ -11,16 +11,9 @@ import Footer from '@/components/landing/footer';
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen flex-col bg-background text-foreground">
+    <div className="flex min-h-screen flex-col bg-background text-foreground dark-theme">
 
       <Navbar />
-      <div
-        className="absolute inset-0 z-[-1] h-full w-full bg-gradient-to-br from-black via-slate-900 to-blue-900/20"
-        style={{
-          filter: 'blur(10px)',
-          opacity: 0.8,
-        }}
-       />
       <main className="flex-1">
         <Hero />
         <Features />

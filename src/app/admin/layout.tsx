@@ -14,7 +14,7 @@ export default function AdminLayout({
       <Sidebar />
       <div className="flex-1 flex flex-col lg:ml-64">
         <Navbar />
-        <main className="flex-1 p-6 bg-gray-50 dark:bg-gray-800 text-gray-900 dark:text-gray-100">
+        <main className="flex-1 p-6">
           {children}
         </main>
       </div>

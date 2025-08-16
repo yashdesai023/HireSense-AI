@@ -25,7 +25,7 @@ const RecentActivityTable = () => {
   };
 
   return (
-    <div className="bg-white rounded-lg shadow-xl p-6 text-gray-800">
+    <div className="w-full p-8 rounded-lg shadow-xl backdrop-filter backdrop-blur-lg bg-white bg-opacity-10 border border-opacity-20 border-white text-white">
       <h2 className="text-xl font-bold mb-4">Recent Activity</h2>
       <div className="overflow-x-auto">
         <table className="min-w-full divide-y divide-gray-200">
@@ -43,8 +43,7 @@ const RecentActivityTable = () => {
               <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                 Status
               </th>
-            </tr>
-          </thead>
+            </tr></thead>
           <tbody className="divide-y divide-gray-200">
             {recentActivities.map((activity, index) => (
               <tr
@@ -53,17 +52,13 @@ const RecentActivityTable = () => {
                   ${index % 2 === 0 ? 'bg-gray-50' : 'bg-white'}
                   hover:bg-gray-100 transition-colors
                 `}
-              >
-                <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+              ><td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-white">
                   {activity.activity}
-                </td>
-                <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                </td><td className="px-6 py-4 whitespace-nowrap text-sm text-gray-300">
                   {activity.name}
-                </td>
-                <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                </td><td className="px-6 py-4 whitespace-nowrap text-sm text-gray-300">
                   {activity.dateTime}
-                </td>
-                <td className="px-6 py-4 whitespace-nowrap text-sm">
+                </td><td className="px-6 py-4 whitespace-nowrap text-sm">
                   <span className={`px-2 inline-flex text-xs leading-5 font-semibold rounded-full ${getStatusBadgeColor(activity.status)}`}>
                     {activity.status}
                   </span>
@@ -71,9 +66,7 @@ const RecentActivityTable = () => {
               </tr>
             ))}
           </tbody>
-        </table>
-      </div>
-    </div>
+        </table></div></div>
   );
 };
 

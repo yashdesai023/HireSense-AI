@@ -1,10 +1,7 @@
-
-'use client';
 // src/components/dashboard/admin/overview/AIInsightsPanel.jsx
 import React from 'react';
 // Assuming you have Lucide React or similar icon library installed
 import { Lightbulb, TrendingUp, AlertTriangle, ExternalLink } from 'lucide-react';
-
 // Dummy data for insights
 const insights = [
   {
@@ -27,17 +24,16 @@ const insights = [
   },
   // Add more dummy insights as needed
 ];
-
 const AIInsightsPanel = () => {
   // Purpose: Displays AI-related insights and alerts on the dashboard overview.
   return (
-    <div className="bg-white p-6 rounded-lg shadow-xl text-gray-800"> {/* Dark background card */}
-      <h2 className="text-xl font-bold mb-4">AI Insights & Suggestions</h2>
+    <div className="w-full p-8 rounded-lg shadow-xl backdrop-filter backdrop-blur-lg bg-white bg-opacity-10 border border-opacity-20 border-white text-white"> {/* Dark background card */}
+      <h2 className="text-xl font-bold mb-4 text-white">AI Insights & Suggestions</h2>
       <div className="space-y-4">
         {insights.map((insight) => (
           <div
             key={insight.id}
-            className={`flex items-start p-4 rounded-md border border-gray-200 ${
+            className={`flex items-start p-4 rounded-md border border-gray-700 ${
               insight.isImportant ? 'ring-2 ring-cyan-500 ring-opacity-50' : '' // Cyan glow border
             }`}
           >
@@ -45,9 +41,9 @@ const AIInsightsPanel = () => {
               {insight.icon}
             </div>
             <div className="flex-grow">
-              <p className="text-gray-600 text-sm mb-2">{insight.text}</p>
+              <p className="text-white text-sm mb-2">{insight.text}</p>
               {/* Placeholder View Details Button */}
-              <button className="text-cyan-600 hover:text-cyan-700 text-xs font-medium flex items-center">
+              <button className="text-cyan-400 hover:text-cyan-500 text-xs font-medium flex items-center">
                 View Details
                 <ExternalLink className="ml-1" size={14} />
               </button>
@@ -58,5 +54,4 @@ const AIInsightsPanel = () => {
     </div>
   );
 };
-
-export default AIInsightsPanel;
+export default AIInsightsPanel; // Add this line

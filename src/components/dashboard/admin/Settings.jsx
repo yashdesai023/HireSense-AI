@@ -6,11 +6,11 @@ const Settings = () => {
   // Purpose: Component for managing system configurations.
   return (
     <div className="p-6">
-      <h1 className="text-2xl font-bold mb-6 text-gray-800">System Settings</h1>
+      <h1 className="text-2xl font-bold mb-6 text-white">System Settings</h1>
 
       {/* General Settings */}
-      <div className="bg-white p-6 rounded-lg shadow-xl mb-6">
-        <h2 className="text-xl font-semibold mb-4 text-gray-800">General Settings</h2>
+      <div className="w-full p-8 rounded-lg shadow-xl backdrop-filter backdrop-blur-lg bg-white bg-opacity-10 border border-opacity-20 border-white text-white mb-6">
+        <h2 className="text-xl font-semibold mb-4 text-white">General Settings</h2>
         <div className="space-y-4">
           <div>
             <label htmlFor="platformName" className="block text-sm font-medium text-gray-700 mb-1">Platform Name</label>
@@ -59,8 +59,8 @@ const Settings = () => {
       </div>
 
       {/* User & Role Management Settings */}
-      <div className="bg-white p-6 rounded-lg shadow-xl mb-6">
-        <h2 className="text-xl font-semibold mb-4 text-gray-800">User & Role Management Settings</h2>
+      <div className="w-full p-8 rounded-lg shadow-xl backdrop-filter backdrop-blur-lg bg-white bg-opacity-10 border border-opacity-20 border-white text-white mb-6">
+        <h2 className="text-xl font-semibold mb-4 text-white">User & Role Management Settings</h2>
         <div className="space-y-4">
           <div>
             <label htmlFor="defaultRole" className="block text-sm font-medium text-gray-700 mb-1">Default Role for New Users</label>
@@ -96,8 +96,8 @@ const Settings = () => {
       </div>
 
       {/* Notification Settings */}
-      <div className="bg-white p-6 rounded-lg shadow-xl mb-6">
-        <h2 className="text-xl font-semibold mb-4 text-gray-800">Notification Settings</h2>
+      <div className="w-full p-8 rounded-lg shadow-xl backdrop-filter backdrop-blur-lg bg-white bg-opacity-10 border border-opacity-20 border-white text-white mb-6">
+        <h2 className="text-xl font-semibold mb-4 text-white">Notification Settings</h2>
         <div className="space-y-2">
           <div className="flex items-center justify-between">
             <span className="text-gray-700">Email notifications for Job Updates</span>
@@ -123,8 +123,8 @@ const Settings = () => {
       </div>
 
       {/* Security Settings */}
-      <div className="bg-white p-6 rounded-lg shadow-xl mb-6">
-        <h2 className="text-xl font-semibold mb-4 text-gray-800">Security Settings</h2>
+      <div className="w-full p-8 rounded-lg shadow-xl backdrop-filter backdrop-blur-lg bg-white bg-opacity-10 border border-opacity-20 border-white text-white mb-6">
+        <h2 className="text-xl font-semibold mb-4 text-white">Security Settings</h2>
         <div className="space-y-4">
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-1">Password Policy</label>
@@ -167,8 +167,8 @@ const Settings = () => {
       </div>
 
       {/* System Maintenance */}
-      <div className="bg-white p-6 rounded-lg shadow-xl">
-        <h2 className="text-xl font-semibold mb-4 text-gray-800">System Maintenance</h2>
+      <div className="w-full p-8 rounded-lg shadow-xl backdrop-filter backdrop-blur-lg bg-white bg-opacity-10 border border-opacity-20 border-white text-white">
+        <h2 className="text-xl font-semibold mb-4 text-white">System Maintenance</h2>
         <div className="space-y-4">
           <div>
             <button className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">Backup Data Now</button>
