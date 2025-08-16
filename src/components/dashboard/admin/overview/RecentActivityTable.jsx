@@ -1,5 +1,5 @@
-jsx
-// src/components/dashboard/admin/overview/RecentActivityTable.jsx
+
+'use client';
 import React from 'react';
 
 const RecentActivityTable = () => {
@@ -14,53 +14,53 @@ const RecentActivityTable = () => {
   const getStatusBadgeColor = (status) => {
     switch (status) {
       case 'Success':
-        return 'bg-green-500 text-white';
+        return 'bg-green-100 text-green-800';
       case 'Pending':
-        return 'bg-yellow-500 text-gray-800';
+        return 'bg-yellow-100 text-yellow-800';
       case 'Failed':
-        return 'bg-red-500 text-white';
+        return 'bg-red-100 text-red-800';
       default:
-        return 'bg-gray-500 text-white';
+        return 'bg-gray-100 text-gray-800';
     }
   };
 
   return (
-    <div className="bg-white bg-opacity-10 backdrop-filter backdrop-blur-lg rounded-lg shadow-xl p-6 text-white">
+    <div className="bg-white rounded-lg shadow-xl p-6 text-gray-800">
       <h2 className="text-xl font-bold mb-4">Recent Activity</h2>
       <div className="overflow-x-auto">
-        <table className="min-w-full divide-y divide-gray-700">
-          <thead>
+        <table className="min-w-full divide-y divide-gray-200">
+          <thead className="bg-gray-50">
             <tr>
-              <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">
+              <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                 Activity
               </th>
-              <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">
+              <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                 User/Company Name
               </th>
-              <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">
+              <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                 Date & Time
               </th>
-              <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">
+              <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                 Status
               </th>
             </tr>
           </thead>
-          <tbody className="divide-y divide-gray-700">
+          <tbody className="divide-y divide-gray-200">
             {recentActivities.map((activity, index) => (
               <tr
                 key={activity.id}
                 className={`
-                  ${index % 2 === 0 ? 'bg-gray-800 bg-opacity-50' : 'bg-gray-900 bg-opacity-50'}
-                  hover:bg-gray-700 hover:bg-opacity-70 transition-colors
+                  ${index % 2 === 0 ? 'bg-gray-50' : 'bg-white'}
+                  hover:bg-gray-100 transition-colors
                 `}
               >
-                <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-100">
+                <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
                   {activity.activity}
                 </td>
-                <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-200">
+                <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
                   {activity.name}
                 </td>
-                <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-200">
+                <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
                   {activity.dateTime}
                 </td>
                 <td className="px-6 py-4 whitespace-nowrap text-sm">

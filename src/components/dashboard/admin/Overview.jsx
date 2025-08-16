@@ -1,5 +1,7 @@
-import React from 'react';
 
+'use client';
+import React from 'react';
+import { User, Briefcase, Bot, Send } from 'lucide-react';
 // Import placeholder components for Overview sections (update paths as needed)
 import StatsCard from './overview/StatsCard';
 import ChartSection from './overview/ChartSection';
@@ -9,6 +11,13 @@ import AIInsightsPanel from './overview/AIInsightsPanel';
 const Overview = () => {
   // Purpose: This component serves as the default landing page for the admin dashboard,
   // displaying key metrics, charts, recent activity, and AI insights.
+
+  const stats = [
+      {title: "Total Users", value: "1,250", icon: <User />, changeValue: "+5%", changeType: "up"},
+      {title: "Job Postings", value: "340", icon: <Briefcase />, changeValue: "+12", changeType: "up"},
+      {title: "AI Matches", value: "8,600", icon: <Bot />, changeValue: "+50", changeType: "up"},
+      {title: "Applications Sent", value: "12,400", icon: <Send />, changeValue: "-2%", changeType: "down"},
+  ]
 
   return (
     <div className="p-6">
@@ -25,10 +34,7 @@ const Overview = () => {
 
       {/* Key Metrics Cards Placeholder */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-        <StatsCard />
-        <StatsCard />
-        <StatsCard />
-        <StatsCard />
+        {stats.map(stat => <StatsCard key={stat.title} {...stat} />)}
       </div>
 
       {/* Charts & Visuals Placeholder */}
@@ -46,3 +52,4 @@ const Overview = () => {
 };
 
 export default Overview;
+

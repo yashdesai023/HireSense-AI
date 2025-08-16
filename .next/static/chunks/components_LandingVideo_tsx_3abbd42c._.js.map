@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 7, "column": 0}, "map": {"version":3,"sources":["file:///home/user/studio/components/LandingVideo.tsx"],"sourcesContent":["jsx\n\"use client\";\nimport React from 'react';\n\nconst LandingVideo = () => {\n  return (\n    <video\n      src=\"src/animations/register-page-bg-vid-14_08_2025, 17_15.mp4\"\n      loop\n      autoPlay\n      muted\n      style={{\n        position: 'absolute',\n        top: 0,\n        left: 0,\n        width: '100%',\n        height: '100%',\n        objectFit: 'cover',\n        zIndex: -1,\n        filter: 'blur(10px)',\n        opacity: 0.8,\n      }}\n    />\n  );\n};\n\nexport default LandingVideo;"],"names":[],"mappings":";;;;;AAAA;AACA;AAGA,MAAM,eAAe;IACnB,qBACE,6LAAC;QACC,KAAI;QACJ,IAAI;QACJ,QAAQ;QACR,KAAK;QACL,OAAO;YACL,UAAU;YACV,KAAK;YACL,MAAM;YACN,OAAO;YACP,QAAQ;YACR,WAAW;YACX,QAAQ,CAAC;YACT,QAAQ;YACR,SAAS;QACX;;;;;;AAGN;KApBM;uCAsBS","debugId":null}}]
+}

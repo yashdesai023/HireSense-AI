@@ -1,3 +1,5 @@
+
+'use client';
 import React from 'react';
 import Link from 'next/link'; // Assuming you might want the logo to be a link
 import { Search, Bell, User } from 'lucide-react'; // Importing icons from lucide-react
@@ -15,11 +17,11 @@ import {
 const Navbar = () => {
   // Purpose: Top navigation bar for quick actions and profile menu
   return (
-    <div className="sticky top-0 z-40 w-full bg-[#111827] text-white shadow-md h-16 flex items-center px-6">
+    <div className="sticky top-0 z-40 w-full bg-white text-gray-800 shadow-md h-16 flex items-center px-6">
       {/* Left Side: Logo and Project Title */}
       <div className="flex items-center space-x-2">
         {/* You might want to replace this with your actual Logo component */}
-        <Link href="/dashboard/admin" className="flex items-center space-x-2 text-white">
+        <Link href="/admin" className="flex items-center space-x-2 text-gray-800">
           {/* Assuming you have a Logo component or just use text */}
           {/* <Logo /> */}
           <span className="font-bold text-xl">HireSense AI</span>
@@ -34,40 +36,35 @@ const Navbar = () => {
           <Input
             type="text"
             placeholder="Search..."
-            className="pl-10 pr-4 py-2 rounded-md bg-gray-800 text-white border-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="pl-10 pr-4 py-2 rounded-md bg-gray-100 text-gray-800 border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
         </div>
 
         {/* Notification Icon */}
         <div className="relative">
-          <Bell className="h-6 w-6 text-gray-300 cursor-pointer" />
+          <Bell className="h-6 w-6 text-gray-600 cursor-pointer" />
           {/* Notification Badge Placeholder */}
-          <span className="absolute top-0 right-0 block h-2 w-2 rounded-full ring-2 ring-[#111827] bg-red-500" />
+          <span className="absolute top-0 right-0 block h-2 w-2 rounded-full ring-2 ring-white bg-red-500" />
         </div>
 
         {/* User Avatar Dropdown */}
         <DropdownMenu>
           <DropdownMenuTrigger className="flex items-center space-x-2 cursor-pointer focus:outline-none">
             <Avatar>
-              <AvatarImage src="/placeholder-avatar.jpg" alt="User Avatar" /> {/* Replace with user avatar source */}
+              <AvatarImage src="https://placehold.co/40x40.png" alt="User Avatar" /> {/* Replace with user avatar source */}
               <AvatarFallback>U</AvatarFallback> {/* Replace with user initials */}
             </Avatar>
             <span className="hidden md:block text-sm font-medium">Admin Name</span> {/* Replace with actual admin name */}
           </DropdownMenuTrigger>
-          <DropdownMenuContent className="w-48 bg-gray-800 text-white border border-gray-700">
+          <DropdownMenuContent className="w-48 bg-white text-gray-800 border border-gray-200">
             <DropdownMenuLabel>My Account</DropdownMenuLabel>
-            <DropdownMenuSeparator className="bg-gray-700" />
+            <DropdownMenuSeparator className="bg-gray-200" />
             <DropdownMenuItem>Profile</DropdownMenuItem>
             <DropdownMenuItem>Settings</DropdownMenuItem>
-            <DropdownMenuSeparator className="bg-gray-700" />
+            <DropdownMenuSeparator className="bg-gray-200" />
             <DropdownMenuItem>Logout</DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>
-
-        {/* Optional: Quick Action Button (e.g., Add Job) */}
-        {/* <button className="bg-blue-600 hover:bg-blue-700 text-white px-3 py-1 rounded-md text-sm">
-          + Add Job
-        </button> */}
       </div>
     </div>
   );

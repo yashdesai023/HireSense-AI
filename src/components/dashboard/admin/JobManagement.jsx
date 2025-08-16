@@ -1,3 +1,4 @@
+'use client';
 import React from 'react';
 import { Search } from 'lucide-react';
 
@@ -44,13 +45,6 @@ const JobManagement = () => {
           <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" size={18} />
         </div>
 
-        {/* Date Range Filter (Placeholder) */}
-        {/* <div className="flex items-center">
-          <label className="mr-2 text-gray-700">Posted Date:</label>
-          <input type="date" className="border rounded-md px-3 py-2 text-gray-700" />
-          <span className="mx-2 text-gray-500">-</span>
-          <input type="date" className="border rounded-md px-3 py-2 text-gray-700" />
-        </div> */}
       </div>
 
       {/* Job List Table */}
@@ -111,14 +105,6 @@ const JobManagement = () => {
           </tbody>
         </table>
       </div>
-
-      {/* Optional Analytics Sidebar (Placeholder) */}
-      {/* <div className="w-64 bg-gray-100 p-4 rounded-lg shadow-md">
-        <h3 className="text-lg font-bold mb-4 text-gray-800">Analytics Overview</h3>
-        <p className="text-sm text-gray-700">Open Jobs Count: XX</p>
-        <p className="text-sm text-gray-700">Applicants Today: YY</p>
-        <p className="text-sm text-gray-700">Most Applied Job: Job Title</p>
-      </div> */}
     </div>
   );
 };

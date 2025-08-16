@@ -1,10 +1,10 @@
-jsx
-import AdminDashboard from '../../components/dashboard/admin/AdminDashboard';
+
+import Overview from '@/components/dashboard/admin/Overview';
 
 const AdminPage = () => {
   return (
     <div>
-      <AdminDashboard />
+      <Overview />
     </div>
   );
 };
