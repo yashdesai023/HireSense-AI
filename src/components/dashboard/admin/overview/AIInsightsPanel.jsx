@@ -28,7 +28,7 @@ const insights = [
 const AIInsightsPanel = () => {
   // Purpose: Displays AI-related insights and alerts on the dashboard overview.
   return (
-    <div className="w-full p-8 rounded-lg shadow-lg bg-card text-card-foreground">
+    <div className="w-full p-8 rounded-lg shadow-lg bg-white/10 backdrop-blur-sm border border-white/20">
       <h2 className="text-xl font-bold mb-4 text-foreground">AI Insights & Suggestions</h2>
       <div className="space-y-4">
         {insights.map((insight) => (

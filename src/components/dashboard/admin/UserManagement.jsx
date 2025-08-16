@@ -45,7 +45,7 @@ const UserManagement = () => {
       </div>
 
       {/* Filter Bar */}
-      <div className="w-full p-8 rounded-lg shadow-lg bg-card text-card-foreground mb-6 flex flex-wrap items-center gap-4">
+      <div className="w-full p-8 rounded-lg shadow-lg bg-white/10 backdrop-blur-sm border border-white/20 text-card-foreground mb-6 flex flex-wrap items-center gap-4">
         <select className="border rounded-md p-2 bg-input text-foreground">
           <option value="All">Filter by Role (All)</option>
           <option value="Admin">Admin</option>
@@ -63,7 +63,7 @@ const UserManagement = () => {
       </div>
 
       {/* Bulk Actions Panel */}
-      <div className="w-full p-4 rounded-lg shadow-lg bg-card text-card-foreground mb-6 flex items-center gap-4">
+      <div className="w-full p-4 rounded-lg shadow-lg bg-white/10 backdrop-blur-sm border border-white/20 text-card-foreground mb-6 flex items-center gap-4">
         <input type="checkbox" className="form-checkbox" />
         <span>Select All</span>
         <button className="bg-green-500 text-white px-3 py-1 rounded-md text-sm hover:bg-green-600">
@@ -78,7 +78,7 @@ const UserManagement = () => {
       </div>
 
       {/* User Table */}
-      <div className="w-full rounded-lg shadow-lg bg-card text-card-foreground overflow-x-auto">
+      <div className="w-full rounded-lg shadow-lg bg-white/10 backdrop-blur-sm border border-white/20 text-card-foreground overflow-x-auto">
         <table className="min-w-full divide-y divide-border">
           <thead className="bg-muted/50">
             <tr>
@@ -91,7 +91,7 @@ const UserManagement = () => {
               <th className="px-6 py-3 text-left text-xs font-medium text-muted-foreground uppercase tracking-wider">Actions</th>
             </tr>
           </thead>
-          <tbody className="divide-y divide-border">
+          <tbody className="divide-y divide-border bg-transparent">
             {dummyUsers.map((user) => (
               <tr key={user.id} className="hover:bg-muted/50">
                 <td className="px-6 py-4 whitespace-nowrap"><input type="checkbox" className="form-checkbox" /></td>

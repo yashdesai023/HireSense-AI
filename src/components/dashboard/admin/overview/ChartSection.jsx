@@ -31,7 +31,7 @@ const aiMatchSuccessData = [
 
 const ChartSection = () => {
   return (
-    <div className="bg-card p-6 rounded-lg shadow-lg">
+    <div className="p-6 rounded-lg shadow-lg bg-white/10 backdrop-blur-sm border border-white/20">
       <h2 className="text-xl font-bold text-card-foreground mb-4">Platform Analytics</h2>
 
       <div className="mb-6" style={{ height: '300px' }}>

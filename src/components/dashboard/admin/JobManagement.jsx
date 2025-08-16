@@ -49,7 +49,7 @@ const JobManagement = () => {
       </div>
 
       {/* Job List Table */}
-      <div className="w-full p-8 rounded-lg shadow-lg bg-card text-card-foreground overflow-hidden mb-6">
+      <div className="w-full p-8 rounded-lg shadow-lg bg-white/10 backdrop-blur-sm border border-white/20 text-card-foreground overflow-hidden mb-6">
         <table className="min-w-full divide-y divide-border">
           <thead className="bg-muted/50">
             <tr>
@@ -73,7 +73,7 @@ const JobManagement = () => {
               </th>
             </tr>
           </thead>
-          <tbody className="bg-card divide-y divide-border">
+          <tbody className="bg-transparent divide-y divide-border">
             {jobs.map((job, index) => (
               <tr key={index} className="hover:bg-muted/50">
                 <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-foreground">

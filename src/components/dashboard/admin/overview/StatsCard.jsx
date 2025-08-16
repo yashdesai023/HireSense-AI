@@ -5,7 +5,7 @@ import React from 'react';
 const StatsCard = ({ title, value, icon, changeValue, changeType }) => {
   // Purpose: Component for displaying key metrics.
   return (
-    <div className="p-6 bg-card rounded-lg shadow-md text-card-foreground transform transition duration-300 hover:scale-105 hover:shadow-lg">
+    <div className="p-6 rounded-lg shadow-lg bg-white/10 backdrop-blur-sm border border-white/20 transform transition duration-300 hover:scale-105 hover:shadow-xl">
       <div className="flex items-center justify-between mb-4">
         <div className="text-lg font-semibold text-muted-foreground">{title}</div>
         <div className="text-primary">

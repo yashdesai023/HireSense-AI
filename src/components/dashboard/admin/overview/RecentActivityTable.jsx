@@ -25,7 +25,7 @@ const RecentActivityTable = () => {
   };
 
   return (
-    <div className="w-full p-8 rounded-lg shadow-lg bg-card text-card-foreground">
+    <div className="w-full p-8 rounded-lg shadow-lg bg-white/10 backdrop-blur-sm border border-white/20">
       <h2 className="text-xl font-bold mb-4">Recent Activity</h2>
       <div className="overflow-x-auto">
         <table className="min-w-full divide-y divide-border">
