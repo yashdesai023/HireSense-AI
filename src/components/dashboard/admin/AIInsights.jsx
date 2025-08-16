@@ -60,7 +60,7 @@ const AIInsights = () => {
         <div className="lg:col-span-3">
           <TrendChart />
         </div>
-        <div className="lg:col-span-2 grid grid-rows-2 gap-6">
+        <div className="lg:col-span-2 flex flex-col gap-6">
             <PipelineChart />
             <ConfidenceGauge />
         </div>
