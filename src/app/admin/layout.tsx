@@ -1,4 +1,3 @@
-
 'use client';
 import React from 'react';
 import Sidebar from '@/components/dashboard/admin/Sidebar';
@@ -10,11 +9,11 @@ export default function AdminLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div className="flex min-h-screen bg-gray-100 dark:bg-gray-900">
+    <div className="dark flex min-h-screen bg-background text-foreground">
       <Sidebar />
       <div className="flex-1 flex flex-col lg:ml-64">
         <Navbar />
-        <main className="flex-1 p-6">
+        <main className="flex-1 p-6 bg-background">
           {children}
         </main>
       </div>

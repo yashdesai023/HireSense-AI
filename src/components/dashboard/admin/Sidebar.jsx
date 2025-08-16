@@ -19,9 +19,9 @@ const Sidebar = () => {
   ];
 
   return (
-    <aside className="w-64 bg-gray-800 text-white flex-col h-screen fixed top-0 left-0 hidden lg:flex">
+    <aside className="w-64 bg-card text-card-foreground flex-col h-screen fixed top-0 left-0 hidden lg:flex border-r border-border">
       {/* Logo or Icon Placeholder */}
-      <div className="p-4 border-b border-gray-700 flex items-center justify-center h-16">
+      <div className="p-4 border-b border-border flex items-center justify-center h-16">
         {/* Replace with your actual logo or icon component */}
         <span className="text-2xl font-bold">Admin</span>
       </div>
@@ -33,8 +33,8 @@ const Sidebar = () => {
             <div
               className={`flex items-center space-x-3 p-3 rounded-md transition-colors duration-200 cursor-pointer ${
                 pathname === item.href
-                  ? 'bg-blue-600 text-white'
-                  : 'hover:bg-gray-700 hover:text-white'
+                  ? 'bg-primary text-primary-foreground'
+                  : 'hover:bg-accent hover:text-accent-foreground'
               }`}
             >
               <item.icon className="w-5 h-5" />
@@ -45,9 +45,9 @@ const Sidebar = () => {
       </nav>
 
       {/* Logout Button/Link */}
-      <div className="p-4 border-t border-gray-700">
+      <div className="p-4 border-t border-border">
         <Link href="/login"> {/* Adjust the logout path as needed */}
-          <div className="flex items-center space-x-3 p-3 rounded-md transition-colors duration-200 hover:bg-red-600 hover:text-white cursor-pointer">
+          <div className="flex items-center space-x-3 p-3 rounded-md transition-colors duration-200 hover:bg-destructive hover:text-destructive-foreground cursor-pointer">
             <LogOut className="w-5 h-5" />
             <span>Logout</span>
           </div>

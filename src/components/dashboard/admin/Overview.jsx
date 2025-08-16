@@ -23,7 +23,7 @@ const Overview = () => {
     <div className="p-6">
       {/* Header Row */}
       <div className="flex justify-between items-center mb-6">
-        <h1 className="text-2xl font-bold text-gray-800">Welcome back, Admin 👋</h1>
+        <h1 className="text-2xl font-bold text-foreground">Welcome back, Admin 👋</h1>
         {/* Quick Action Buttons Placeholder */}
         <div className="space-x-4">
           {/* <button>Add New Job</button> */}
@@ -52,4 +52,3 @@ const Overview = () => {
 };
 
 export default Overview;
-

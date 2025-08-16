@@ -1,3 +1,4 @@
+
 // src/components/dashboard/admin/overview/AIInsightsPanel.jsx
 import React from 'react';
 // Assuming you have Lucide React or similar icon library installed
@@ -27,23 +28,23 @@ const insights = [
 const AIInsightsPanel = () => {
   // Purpose: Displays AI-related insights and alerts on the dashboard overview.
   return (
-    <div className="w-full p-8 rounded-lg shadow-xl backdrop-filter backdrop-blur-lg bg-white bg-opacity-10 border border-opacity-20 border-white text-white"> {/* Dark background card */}
-      <h2 className="text-xl font-bold mb-4 text-white">AI Insights & Suggestions</h2>
+    <div className="w-full p-8 rounded-lg shadow-lg bg-card text-card-foreground">
+      <h2 className="text-xl font-bold mb-4 text-foreground">AI Insights & Suggestions</h2>
       <div className="space-y-4">
         {insights.map((insight) => (
           <div
             key={insight.id}
-            className={`flex items-start p-4 rounded-md border border-gray-700 ${
-              insight.isImportant ? 'ring-2 ring-cyan-500 ring-opacity-50' : '' // Cyan glow border
+            className={`flex items-start p-4 rounded-md border border-border ${
+              insight.isImportant ? 'ring-2 ring-primary ring-opacity-50' : ''
             }`}
           >
             <div className="flex-shrink-0 mr-4">
               {insight.icon}
             </div>
             <div className="flex-grow">
-              <p className="text-white text-sm mb-2">{insight.text}</p>
+              <p className="text-foreground text-sm mb-2">{insight.text}</p>
               {/* Placeholder View Details Button */}
-              <button className="text-cyan-400 hover:text-cyan-500 text-xs font-medium flex items-center">
+              <button className="text-primary hover:text-primary/80 text-xs font-medium flex items-center">
                 View Details
                 <ExternalLink className="ml-1" size={14} />
               </button>
@@ -54,4 +55,4 @@ const AIInsightsPanel = () => {
     </div>
   );
 };
-export default AIInsightsPanel; // Add this line
+export default AIInsightsPanel;
