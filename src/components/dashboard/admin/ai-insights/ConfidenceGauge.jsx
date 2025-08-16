@@ -18,6 +18,7 @@ const ConfidenceGauge = () => {
           data={data} 
           startAngle={180} 
           endAngle={-180}
+          barSize={20}
         >
           <RadialBar
             minAngle={15}
