@@ -33,7 +33,7 @@ const Sidebar = () => {
             <div
               className={`flex items-center space-x-3 p-3 rounded-md transition-colors duration-200 cursor-pointer ${
                 pathname === item.href
-                  ? 'bg-primary text-primary-foreground'
+                  ? 'border-2 border-cyan-400 bg-cyan-400/10 text-cyan-400'
                   : 'hover:bg-accent hover:text-accent-foreground'
               }`}
             >
