@@ -23,7 +23,7 @@ const Sidebar = () => {
       {/* Logo or Icon Placeholder */}
       <div className="p-4 border-b border-border flex items-center justify-center h-16">
         {/* Replace with your actual logo or icon component */}
-        <span className="text-2xl font-bold">Admin</span>
+        <span className="text-2xl font-bold text-white animate-pulse-glow">Admin</span>
       </div>
 
       {/* Navigation Menu */}
@@ -33,7 +33,7 @@ const Sidebar = () => {
             <div
               className={`flex items-center space-x-3 p-3 rounded-md transition-colors duration-200 cursor-pointer ${
                 pathname === item.href
-                  ? 'border-2 border-cyan-400 bg-cyan-400/10 text-cyan-400'
+                  ? 'border-2 border-cyan-400 bg-transparent text-cyan-400'
                   : 'hover:bg-accent hover:text-accent-foreground'
               }`}
             >

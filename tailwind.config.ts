@@ -1,3 +1,4 @@
+
 import type {Config} from 'tailwindcss';
 
 export default {
@@ -87,10 +88,19 @@ export default {
             height: '0',
           },
         },
+        'pulse-glow': {
+          '0%, 100%': {
+            textShadow: '0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #0A84FF, 0 0 35px #0A84FF, 0 0 40px #0A84FF, 0 0 50px #0A84FF',
+          },
+          '50%': {
+            textShadow: '0 0 10px #fff, 0 0 20px #fff, 0 0 30px #0A84FF, 0 0 40px #0A84FF, 0 0 50px #0A84FF, 0 0 60px #0A84FF, 0 0 70px #0A84FF',
+          },
+        },
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
+        'pulse-glow': 'pulse-glow 2.5s ease-in-out infinite',
       },
     },
   },
