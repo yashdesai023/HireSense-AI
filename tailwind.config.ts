@@ -90,10 +90,10 @@ export default {
         },
         'pulse-glow': {
           '0%, 100%': {
-            textShadow: '0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #0A84FF, 0 0 35px #0A84FF, 0 0 40px #0A84FF, 0 0 50px #0A84FF',
+            textShadow: '0 0 2px #fff, 0 0 4px #fff, 0 0 6px #0A84FF',
           },
           '50%': {
-            textShadow: '0 0 10px #fff, 0 0 20px #fff, 0 0 30px #0A84FF, 0 0 40px #0A84FF, 0 0 50px #0A84FF, 0 0 60px #0A84FF, 0 0 70px #0A84FF',
+            textShadow: '0 0 4px #fff, 0 0 8px #0A84FF, 0 0 12px #0A84FF',
           },
         },
       },
