@@ -1,6 +1,7 @@
 
 'use client';
 import React from 'react';
+import { Button } from '@/components/ui/button';
 
 const UserManagement = () => {
   // Purpose: Component for managing users (Candidates, Recruiters, Roles & Permissions)
@@ -39,9 +40,9 @@ const UserManagement = () => {
           <h1 className="text-2xl font-bold">User Management</h1>
           <p className="text-muted-foreground">View, filter, and manage all platform users</p>
         </div>
-        <button className="bg-primary text-primary-foreground px-4 py-2 rounded-md hover:bg-primary/90">
+        <Button className="bg-primary text-primary-foreground px-4 py-2 rounded-md hover:bg-primary/90">
           Add User
-        </button>
+        </Button>
       </div>
 
       {/* Filter Bar */}
@@ -66,22 +67,23 @@ const UserManagement = () => {
       <div className="w-full p-4 rounded-lg shadow-lg bg-white/10 backdrop-blur-sm border border-white/20 text-card-foreground mb-6 flex items-center gap-4">
         <input type="checkbox" className="form-checkbox" />
         <span>Select All</span>
-        <button className="bg-green-500 text-white px-3 py-1 rounded-md text-sm hover:bg-green-600">
+        <Button variant="outline" size="sm" className="bg-green-500/20 border-green-500 text-green-300 hover:bg-green-500/30 hover:text-green-200">
           Activate
-        </button>
-        <button className="bg-yellow-500 text-white px-3 py-1 rounded-md text-sm hover:bg-yellow-600">
+        </Button>
+        <Button variant="outline" size="sm" className="bg-yellow-500/20 border-yellow-500 text-yellow-300 hover:bg-yellow-500/30 hover:text-yellow-200">
           Suspend
-        </button>
-        <button className="bg-red-500 text-white px-3 py-1 rounded-md text-sm hover:bg-red-600">
+        </Button>
+        <Button variant="destructive" size="sm">
           Delete
-        </button>
+        </Button>
       </div>
 
       {/* User Table */}
       <div className="w-full rounded-lg shadow-lg bg-white/10 backdrop-blur-sm border border-white/20 text-card-foreground overflow-x-auto">
         <table className="min-w-full divide-y divide-border">
           <thead className="bg-muted/50">
-            <tr><th className="px-6 py-3 text-left text-xs font-medium text-muted-foreground uppercase tracking-wider"></th>{/* Checkbox column */}
+            <tr>
+              <th className="px-6 py-3 text-left text-xs font-medium text-muted-foreground uppercase tracking-wider"></th>{/* Checkbox column */}
               <th className="px-6 py-3 text-left text-xs font-medium text-muted-foreground uppercase tracking-wider">Name</th>
               <th className="px-6 py-3 text-left text-xs font-medium text-muted-foreground uppercase tracking-wider">Role</th>
               <th className="px-6 py-3 text-left text-xs font-medium text-muted-foreground uppercase tracking-wider">Email</th>
@@ -107,13 +109,23 @@ const UserManagement = () => {
                   </span>
                 </td>
                 <td className="px-6 py-4 whitespace-nowrap text-sm text-muted-foreground">{user.dateJoined}</td>
-                <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                  <button className="text-primary hover:text-primary/80 mr-2">Edit</button>
-                  <button className={`text-yellow-400 hover:text-yellow-300 mr-2 ${user.status === 'Active' ? '' : 'hidden'}`}>Suspend</button>
-                   <button className={`text-blue-400 hover:text-blue-300 mr-2 ${user.status === 'Pending' ? '' : 'hidden'}`}>Approve</button>
-                   <button className={`text-red-400 hover:text-red-300 ${user.status === 'Pending' ? '' : 'hidden'}`}>Reject</button>
-                   <button className={`text-green-400 hover:text-green-300 mr-2 ${user.status === 'Suspended' ? '' : 'hidden'}`}>Activate</button>
-                  <button className="text-destructive hover:text-destructive/80">Delete</button>
+                <td className="px-6 py-4 whitespace-nowrap text-sm font-medium">
+                   <div className="flex items-center gap-2">
+                    <Button variant="outline" size="sm" className="bg-white/10 border-white/20 hover:bg-white/20">Edit</Button>
+                    
+                    {user.status === 'Active' && <Button variant="outline" size="sm" className="bg-yellow-500/20 border-yellow-500 text-yellow-300 hover:bg-yellow-500/30 hover:text-yellow-200">Suspend</Button>}
+                    
+                    {user.status === 'Pending' && (
+                      <>
+                        <Button variant="outline" size="sm" className="bg-green-500/20 border-green-500 text-green-300 hover:bg-green-500/30 hover:text-green-200">Approve</Button>
+                        <Button variant="destructive" size="sm">Reject</Button>
+                      </>
+                    )}
+                    
+                    {user.status === 'Suspended' && <Button variant="outline" size="sm" className="bg-green-500/20 border-green-500 text-green-300 hover:bg-green-500/30 hover:text-green-200">Activate</Button>}
+
+                    <Button variant="destructive" size="sm">Delete</Button>
+                  </div>
                 </td>
               </tr>
             ))}
@@ -134,3 +146,4 @@ const UserManagement = () => {
 };
 
 export default UserManagement;
+
