@@ -4,7 +4,7 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
+    --background: 0 0% 0%;
     --foreground: 222.2 84% 4.9%;
     --card: 0 0% 100%;
     --card-foreground: 222.2 84% 4.9%;
@@ -29,6 +29,20 @@
     --chart-3: 197 37% 24%;
     --chart-4: 43 74% 66%;
     --chart-5: 27 87% 67%;
+  }
+
+  .dark-theme {
+    background-color: #000000; /* Your desired dark background color */
+    color: #ffffff; /* White text color */
+  }
+
+  .dark-theme h1,
+  .dark-theme h2,
+  .dark-theme h3,
+  .dark-theme p,
+  
+  .dark-theme div {
+    color: #ffffff; /* Ensure headings and other text elements are white */
   }
 
   .dark {

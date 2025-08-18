@@ -11,7 +11,7 @@ import Footer from '@/components/landing/footer';
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen flex-col bg-background text-foreground dark-theme">
+    <div className="flex min-h-screen flex-col bg-background text-foreground dark-theme"> {/* Added dark-theme class */}
 
       <Navbar />
       <main className="flex-1">
